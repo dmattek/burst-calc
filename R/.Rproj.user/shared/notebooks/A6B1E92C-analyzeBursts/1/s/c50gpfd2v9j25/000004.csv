@@ -1,8 +1,0 @@
-"0","require(ggplot2)"
-"0","require(dplyr)"
-"0","source('auxfn.R')"
-"0","source('calcBurstSzFn.R')"
-"0","# read example data"
-"0","df = read.csv('../example-data-1/output1.prel', header = F)"
-"0","# calculate burst size function"
-"0","df.phi=calcBurstSzFn(df$V1, 100, 1/2)"

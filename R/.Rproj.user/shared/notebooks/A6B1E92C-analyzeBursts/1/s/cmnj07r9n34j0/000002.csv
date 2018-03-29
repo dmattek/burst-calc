@@ -1,7 +1,0 @@
-"0","tx = 0.8"
-"0","f.inter = function(x) splinefun(df.phi$t, df.phi$b, method='monoH.FC')(x)"
-"0","f.inter(tx)"
-"1","[1]"
-"1"," 107.1307"
-"1","
-"

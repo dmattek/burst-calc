@@ -1,5 +1,0 @@
-"0","ggplot(df.phi, aes(x=t, y=b)) +"
-"0","  geom_line() +"
-"0","  xlab(""\nthreshold length [T]"") +"
-"0","  ylab(""burst size\n"") +"
-"0","  myGGtheme"
