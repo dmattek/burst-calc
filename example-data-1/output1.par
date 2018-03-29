@@ -1,0 +1,24 @@
+Simulation id      : 1
+Number of reactions: 4
+Number of species  : 3
+Total sim. time    : 10000.000000
+Output frequency   : 1.000000
+Equilibration time : 0.000000
+
+CPU time used (clock): 10000.0000 sec
+CPU time used (time) : 0.0000 sec
+
+P interarrival times:
+Trel AVG 1.9328e-01
+Trel STD 1.3467e+00
+Trel N 51638 P releases
+
+Initiations per ON state:
+Nburst AVG 1.0432e+02
+Nburst STD 9.9661e+01
+Nburst N 495
+
+Species	Mean	STD
+0	0.485545	0.499791
+1	0.514455	0.499791
+2	5.154066	5.115444

@@ -1,0 +1,68 @@
+---
+title: "Analyze bursts"
+output: html_notebook
+---
+
+Demonstrates burst analysis on a sample data from a simple burster (modified Poisson process): an ON-OFF switch with events firing in the ON state. Transition rates are kON = kOFF = 0.1 [1/T], kProd = 10 [1/T]. Thus, on average, there are 100 events per ON state. The ON and OFF states last, on average, 10 time units each.
+
+```{r}
+require(ggplot2)
+require(dplyr)
+source('auxfn.R')
+source('calcBurstSzFn.R')
+
+# read example data
+df = read.csv('../example-data-1/output1.prel', header = F)
+
+# calculate burst size function
+df.phi=calcBurstSzFn(df$V1, 100, 1/2)
+
+```
+
+## Plot of burst size function.
+
+```{r}
+ggplot(df.phi, aes(x=t, y=b)) +
+  geom_line() +
+  xlab("\nthreshold length [T]") +
+  ylab("burst size\n") +
+  myGGtheme
+
+```
+
+## Burst size 
+Calculated at taux, which lies in the middle between two inflection points, tau1 and tau2:
+
+```{r}
+tx = 0.8
+f.inter = function(x) splinefun(df.phi$t, df.phi$b, method='monoH.FC')(x)
+f.inter(tx)
+
+```
+
+## Burst significance
+
+Formula: 1 - tau2/tau1. Requires calculation of two inflection points of the burst size function. Here, we assume that tau2 is at tau=1.5 and tau1 at tau=0.5.
+
+```{r}
+1 - f.inter(0.5)/f.inter(1.5)
+```
+
+
+## Burst duration
+τβ, is the mean inter-arrival time within a burst. Calculate by averaging over intervals lower than τX.
+
+```{r}
+v.sub = df$V1[df$V1 > 0 & df$V1 < tx]
+mean(v.sub)
+```
+
+## Burstiness
+See definition in https://arxiv.org/pdf/1604.01125.pdf
+
+B has the value of −1 for regular time series as σ = 0, and 0 for Poissonian or random time series as σ = μ. Finally, the value of B approaches 1 for extremely bursty time series as σ → ∞ for finite μ. 
+
+```{r}
+(sd(df$V1) - mean(df$V1))/(sd(df$V1) + mean(df$V1))
+```
+
