@@ -1,7 +1,9 @@
-Supplementary code for analyzing bursts in product interarrival times.
+Supplementary code for M Dobrzyński & FJ Bruggeman, _Elongation dynamics shape bursty transcription and translation_, PNAS, 2009 ([link](https://doi.org/10.1073/pnas.0803507106)).
+
+Analyze bursts in interarrival times.
 Last modification: 30 March 2018
 
-Maciej Dobrzynski & Frank J Bruggeman
+Authors: M Dobrzynski
 Centre for Mathematics and Computer Science (CWI), Amsterdam, The Netherlands
 
 Content of the directory:
