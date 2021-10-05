@@ -3,8 +3,7 @@ Supplementary code for M Dobrzyński & FJ Bruggeman, _Elongation dynamics shape 
 Analyze bursts in interarrival times.
 Last modification: 30 March 2018
 
-Authors: M Dobrzynski
-Centre for Mathematics and Computer Science (CWI), Amsterdam, The Netherlands
+Authors: M Dobrzyński, Centre for Mathematics and Computer Science (CWI), Amsterdam, The Netherlands
 
 Content of the directory:
 burster         - C code for Gillespie simulation of the basic burst-generating model,
